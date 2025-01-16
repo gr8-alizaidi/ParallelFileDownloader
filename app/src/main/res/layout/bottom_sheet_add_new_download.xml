@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottom_sheet"
+    android:paddingTop="10dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/line_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title_add_new_download"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:fontFamily="@font/plus_jakarta_sans_semi_bold"
+        android:paddingHorizontal="20dp"
+        android:text="Add New Download"
+        android:textColor="@color/black_1"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line_bar" />
+
+    <View
+        android:id="@+id/divider_1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="16dp"
+        android:background="#F1F1F1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_add_new_download" />
+
+<!--    Get Link-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/get_link_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="20dp"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/divider_1"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title_enter_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/plus_jakarta_sans_semi_bold"
+            android:text="Enter Link"
+            android:textColor="@color/black_1"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/linkField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:theme="@style/TextInputLayoutAppearance"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="00dp"
+            app:endIconContentDescription="End Icon"
+            app:endIconDrawable="@drawable/cross_icon"
+            app:endIconMode="custom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_enter_link">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/download_link"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@drawable/input_field_bg"
+                android:ellipsize="middle"
+                android:fontFamily="@font/plus_jakarta_sans_semi_bold"
+                android:inputType="text"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:singleLine="true"
+                android:textColor="@color/black_1"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/cancel_button"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="14dp"
+            android:background="@drawable/bg_btn_cancel"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
+            android:paddingHorizontal="10dp"
+            android:text="Cancel"
+            android:gravity = "center"
+            android:textAllCaps="false"
+            android:textColor="@color/black_1"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toStartOf="@+id/add_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linkField"
+            />
+
+        <TextView
+            android:id="@+id/add_button"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_btn_add"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
+            android:text="Add"
+            android:gravity = "center"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cancel_button"
+            app:layout_constraintTop_toBottomOf="@+id/linkField"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_button"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    Grabbing Info-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/get_grabbing_info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="383dp"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line_bar"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="78dp"
+            android:layout_height="78dp"
+            android:layout_marginEnd="10dp"
+            android:indeterminate="true"
+            android:indeterminateDrawable="@drawable/circular_progressbar"
+            android:indeterminateTintMode="src_atop"
+            app:layout_constraintBottom_toTopOf="@+id/title_grabbing_info"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:progress="50" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title_grabbing_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/plus_jakarta_sans_semi_bold"
+            android:text="Grabbing Info..."
+            android:textColor="@color/black_1"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    file details-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/get_file_save_details_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_1"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title_file_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/plus_jakarta_sans_semi_bold"
+            android:text="File Name"
+            android:textColor="@color/black_1"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/file_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/plus_jakarta_sans_semi_bold"
+            android:text="0 MB"
+            android:textColor="#848484"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/title_file_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/title_file_name" />
+
+        <LinearLayout
+            android:id="@+id/file_name_field"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/input_field_bg"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="14dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_file_name">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/file_name"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:ellipsize="end"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:gravity="start"
+                android:singleLine="true"
+                android:background="@drawable/bg_edit_text"
+                android:inputType="text"
+                android:textColor="@color/black_1"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/file_extension"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:background="@drawable/bg_extension"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:gravity="center"
+                android:text="EXE"
+                android:textColor="@color/black_1"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title_destination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/plus_jakarta_sans_semi_bold"
+            android:textColor="@color/black"
+            android:text="Destination Folder"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/file_name_field" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/destinationField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:theme="@style/TextInputLayoutAppearance"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_destination"
+            app:startIconDrawable="@drawable/folder"
+            app:startIconTint="@color/black_2">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/folder_location"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@drawable/input_field_bg"
+                android:fontFamily="@font/plus_jakarta_sans_semi_bold"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/black_1"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/wifi_layout"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/input_field_bg_2"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="14dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/destinationField">
+
+            <TextView
+                android:id="@+id/title_download_wifi"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:fontFamily="@font/plus_jakarta_sans_semi_bold"
+                android:gravity="start"
+                android:text="Download over Wi-Fi only"
+                android:textColor="#1B1423"
+                android:textSize="14sp" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/wifi_checkbox"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.4"
+                android:theme="@style/checkBoxStyle" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/btn_close"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="29dp"
+            android:layout_marginEnd="14dp"
+            android:background="@drawable/bg_btn_cancel"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
+            android:text="Close"
+            android:gravity = "center"
+            android:textAllCaps="false"
+            android:textColor="@color/black_1"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/btn_add"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/wifi_layout" />
+
+        <TextView
+            android:id="@+id/btn_add"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="29dp"
+            android:background="@drawable/bg_btn_add"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
+            android:text="Add"
+            android:gravity = "center"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_close"
+            app:layout_constraintTop_toBottomOf="@+id/wifi_layout" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_add"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    success-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/get_success_layout"
+        android:layout_width="match_parent"
+        android:layout_height="383dp"
+        android:background="@color/white"
+        android:padding="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line_bar"
+        android:visibility="gone"
+        >
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/btn_done"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:srcCompat="@drawable/ic_success" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/plus_jakarta_sans_semi_bold"
+                android:text="Successfully Added"
+                android:textColor="#2B2F39"
+                android:textSize="18sp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <TextView
+            android:id="@+id/btn_done"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_btn_add"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
+            android:text="Done"
+            android:gravity = "center"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    failure-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/get_failed_layout"
+        android:layout_width="match_parent"
+        android:layout_height="383dp"
+        android:background="@color/white"
+        android:padding="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line_bar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"
+        >
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/failed"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btn_back_failure">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:srcCompat="@drawable/ic_failed" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/plus_jakarta_sans_semi_bold"
+                android:text="Something went wrong"
+                android:textColor="#2B2F39"
+                android:textSize="18sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/error_message"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_error_reason"
+                android:backgroundTint="#FFEBEB"
+                android:fontFamily="@font/plus_jakarta_sans_medium"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="12dp"
+                android:textColor="#2C2C2C"
+                android:textSize="12sp"
+                tools:text="Reason of failure are here for lorem dolor sit amet is a dummy text," />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <TextView
+            android:id="@+id/btn_close_failure"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="14dp"
+            android:elevation="0dp"
+            android:background="@drawable/bg_btn_cancel"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
+            android:gravity = "center"
+            android:text="Close"
+            android:textAllCaps="false"
+            android:textColor="#2B2F39"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_back_failure"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/btn_back_failure"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_btn_add"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
+            android:text="Back"
+            android:textAllCaps="false"
+            android:gravity = "center"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_close_failure" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

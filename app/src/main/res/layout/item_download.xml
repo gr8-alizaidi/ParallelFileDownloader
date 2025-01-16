@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="20dp"
+    >
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/action_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/action_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/action_title"
+        tools:srcCompat="@drawable/ic_resume"
+        android:padding="5dp"
+        tools:ignore="ImageContrastCheck" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/action_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="22dp"
+        android:ellipsize="middle"
+        android:singleLine="true"
+        android:fontFamily="@font/plus_jakarta_sans_bold"
+        android:gravity="start|center_vertical"
+        tools:text="Kafka Kuru Kuru...- 10 hour.mp3"
+        android:textColor="@color/black_1"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/action_icon"
+        app:layout_constraintEnd_toStartOf="@+id/action_close"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/action_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/action_title"
+        app:layout_constraintBottom_toBottomOf="@+id/action_title"
+        app:layout_constraintStart_toEndOf="@+id/action_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="5dp"
+        app:srcCompat="@drawable/action_close"
+        />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/action_progress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/action_title"
+        app:trackColor="@color/grey_1"
+        app:indicatorColor="@color/progress_downloading"
+        app:trackThickness="4dp"
+        tools:progress="40" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/action_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/plus_jakarta_sans_semi_bold"
+        android:gravity="start"
+        tools:text="Waiting in queue"
+        android:textColor="@color/grey_2"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/action_progress" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/action_separator"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        app:srcCompat="@drawable/separator"
+        app:layout_constraintStart_toEndOf="@+id/action_detail"
+        app:layout_constraintEnd_toStartOf="@+id/action_source"
+        app:layout_constraintTop_toTopOf="@+id/action_detail"
+        app:layout_constraintBottom_toBottomOf="@+id/action_detail"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/action_source"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/plus_jakarta_sans_semi_bold"
+        android:gravity="start"
+        android:ellipsize="middle"
+        android:singleLine="true"
+        tools:text="drive.google.com"
+        android:textColor="@color/grey_2"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/action_separator"
+        app:layout_constraintEnd_toStartOf="@+id/action_progress_percent"
+        app:layout_constraintTop_toTopOf="@+id/action_detail"
+        app:layout_constraintBottom_toBottomOf="@+id/action_detail" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/action_progress_percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/plus_jakarta_sans_semi_bold"
+        android:gravity="end"
+        tools:text="1%"
+        android:textColor="@color/grey_2"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/action_progress" />
+
+    <View
+        android:id="@+id/item_seperator_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#f1f1f1"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/action_detail"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/action_pause_all"
+        android:title="Pause All"
+        android:icon="@drawable/menu_pause"/>
+
+    <item android:id="@+id/action_resume_all"
+        android:title="Resume All"
+        android:icon="@drawable/menu_resume"/>
+
+    <item android:id="@+id/action_settings"
+        android:title="Settings"
+        android:icon="@drawable/menu_settings"/>
+
+</menu>

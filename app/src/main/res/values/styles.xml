@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextInputLayoutAppearance" parent="Widget.Design.TextInputLayout">
+        <item name="colorControlNormal">@color/white</item>
+        <item name="colorControlActivated">@color/black</item>
+        <item name="colorControlHighlight">@color/black</item>
+    </style>
+
+    <style name="checkBoxStyle" parent="Base.Theme.AppCompat">
+        <item name="colorAccent">@color/purple</item>
+        <item name="android:textColorSecondary">@color/purple</item>
+    </style>
+
+    <style name="BottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">@color/dim_bg</item>
+    </style>
+
+    <style name="popupMenuStyle" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:popupBackground">@drawable/bg_popup_menu</item>
+        <item name="android:textColor">#2B2F39</item>
+        <item name="android:dropDownHorizontalOffset">-10dp</item>
+        <item name="android:dropDownVerticalOffset">-13dp</item>
+        <item name="android:dropDownWidth">123dp</item>
+        <item name="android:dropDownHeight">123dp</item>
+    </style>
+
+    <color name="dim_bg">#99000000</color>
+</resources>

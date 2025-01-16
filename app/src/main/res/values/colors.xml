@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+
+
+    <color name="black">#FF000000</color>
+    <color name="black_1">#2B2F39</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="purple">#892EFF</color>
+    <color name="progress_downloading">#72BD6c</color>
+    <color name="progress_paused">#A7A7A7</color>
+    <color name="grey_1">#e6e6e6</color>
+    <color name="grey_2">#858181</color>
+    <color name="text_bg">#d3d3d3</color>
+    <color name="angular_black_stroke">#313131</color>
+    <color name="black_2">#1A0D0D</color>
+    <color name="progress_waiting">#Fbc441</color>
+    <color name="progress_failed">#f26262</color>
+    <color name="slider_green">#72BD6C</color>
+</resources>
